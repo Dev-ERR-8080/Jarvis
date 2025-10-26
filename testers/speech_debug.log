@@ -1,0 +1,129 @@
+2025-09-24 02:20:02,421 DEBUG CoInitializeEx(None, 2)
+2025-09-24 02:20:02,516 INFO Imported existing <module 'comtypes.gen' from 'D:\\jarvis\\jarvis_env\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2025-09-24 02:20:02,516 INFO Using writeable comtypes cache directory: 'D:\jarvis\jarvis_env\Lib\site-packages\comtypes\gen'
+2025-09-24 02:20:02,604 DEBUG SAPI.SPVoice -> {96749377-3391-11D2-9EE3-00C04F797396}
+2025-09-24 02:20:02,605 DEBUG CoCreateInstance({96749377-3391-11D2-9EE3-00C04F797396}, clsctx=None, interface=None)
+2025-09-24 02:20:02,616 DEBUG GetBestInterface(<POINTER(IUnknown) ptr=0x1d2d93a2a10 at 1d2d988b950>)
+2025-09-24 02:20:02,616 DEBUG Does implement IProvideClassInfo
+2025-09-24 02:20:02,619 DEBUG Default interface is {269316D8-57BD-11D2-9EEE-00C04F797396}
+2025-09-24 02:20:02,621 DEBUG Release <POINTER(IUnknown) ptr=0x1d2d93a2a50 at 1d2dbd537d0>
+2025-09-24 02:20:02,621 DEBUG GetModule(TLIBATTR(GUID={C866CA3A-32F7-11D2-9602-00C04F8EE628}, Version=5.4, LCID=0, FLags=0x8))
+2025-09-24 02:20:02,621 DEBUG Implements default interface from typeinfo <class 'comtypes.gen._C866CA3A_32F7_11D2_9602_00C04F8EE628_0_5_4.ISpeechVoice'>
+2025-09-24 02:20:02,621 DEBUG Final result is <POINTER(ISpeechVoice) ptr=0x1d2d93a2a50 at 1d2dbd53750>
+2025-09-24 02:20:02,622 DEBUG Release <POINTER(IProvideClassInfo) ptr=0x1d2d93a2a70 at 1d2dbd534d0>
+2025-09-24 02:20:02,622 DEBUG Release <POINTER(ITypeInfo) ptr=0x1d2d9978c18 at 1d2dbd53350>
+2025-09-24 02:20:02,622 DEBUG Release <POINTER(ITypeInfo) ptr=0x1d2d9978c70 at 1d2dbd535d0>
+2025-09-24 02:20:02,622 DEBUG Release <POINTER(ITypeLib) ptr=0x1d2d9b0bc80 at 1d2dbd537d0>
+2025-09-24 02:20:02,622 DEBUG Release <POINTER(IUnknown) ptr=0x1d2d93a2a10 at 1d2d988b950>
+2025-09-24 02:20:02,623 DEBUG <POINTER(ISpeechVoice) ptr=0x1d2d93a2a50 at 1d2dbd53750> using sinkinterface from clsid <class 'comtypes.gen._C866CA3A_32F7_11D2_9602_00C04F8EE628_0_5_4._ISpeechVoiceEvents'>
+2025-09-24 02:20:02,623 DEBUG Release <POINTER(IProvideClassInfo2) ptr=0x1d2d93a2a70 at 1d2d988b950>
+2025-09-24 02:20:02,624 DEBUG <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001D2DB96F770>: _ISpeechVoiceEvents.VoiceChange not implemented
+2025-09-24 02:20:02,624 DEBUG <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001D2DB96F770>: _ISpeechVoiceEvents.Bookmark not implemented
+2025-09-24 02:20:02,624 DEBUG <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001D2DB96F770>: _ISpeechVoiceEvents.Sentence not implemented
+2025-09-24 02:20:02,624 DEBUG <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001D2DB96F770>: _ISpeechVoiceEvents.Phoneme not implemented
+2025-09-24 02:20:02,624 DEBUG <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001D2DB96F770>: _ISpeechVoiceEvents.Viseme not implemented
+2025-09-24 02:20:02,625 DEBUG <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001D2DB96F770>: _ISpeechVoiceEvents.AudioLevel not implemented
+2025-09-24 02:20:02,625 DEBUG <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001D2DB96F770>: _ISpeechVoiceEvents.EnginePrivate not implemented
+2025-09-24 02:20:02,625 DEBUG Start advise <class 'comtypes.gen._C866CA3A_32F7_11D2_9602_00C04F8EE628_0_5_4._ISpeechVoiceEvents'>
+2025-09-24 02:20:02,625 DEBUG <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001D2DB96F770>.QueryInterface({A372ACD1-3BEF-4BBD-8FFB-CB3E2B416AF8}) -> S_OK
+2025-09-24 02:20:02,625 DEBUG 1 active COM objects: Added   <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001D2DB96F770>
+2025-09-24 02:20:02,625 DEBUG <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001D2DB96F770>.AddRef() -> 1
+2025-09-24 02:20:02,631 DEBUG Release <POINTER(IConnectionPointContainer) ptr=0x1d2d93a2a78 at 1d2dbabc9d0>
+2025-09-24 02:20:02,699 DEBUG wrap_outparam(<POINTER(ISpeechObjectToken) ptr=0x1d2d93a8490 at 1d2dbabc9d0>)
+2025-09-24 02:20:02,699 DEBUG Release <POINTER(ISpeechObjectToken) ptr=0x1d2d93a8490 at 1d2dbabc9d0>
+2025-09-24 02:20:02,700 DEBUG wrap_outparam(<POINTER(ISpeechObjectTokens) ptr=0x1d2dcdf7f60 at 1d2dbabc9d0>)
+2025-09-24 02:20:02,700 DEBUG Release <POINTER(IUnknown) ptr=0x1d2d93aae60 at 1d2dbabc550>
+2025-09-24 02:20:02,700 DEBUG wrap_outparam(<POINTER(IDispatch) ptr=0x1d2dcdf8070 at 1d2dbabc2d0>)
+2025-09-24 02:20:02,700 DEBUG GetBestInterface(<POINTER(IDispatch) ptr=0x1d2dcdf8070 at 1d2dbabc2d0>)
+2025-09-24 02:20:02,701 DEBUG Does NOT implement IProvideClassInfo, trying IProvideClassInfo2
+2025-09-24 02:20:02,701 DEBUG Does NOT implement IProvideClassInfo/IProvideClassInfo2
+2025-09-24 02:20:02,702 DEBUG Release <POINTER(IUnknown) ptr=0x1d2d9978d20 at 1d2dbdbcd50>
+2025-09-24 02:20:02,702 DEBUG Default interface is {C74A3ADC-B727-4500-A84A-B526721C8B8C}
+2025-09-24 02:20:02,702 DEBUG Release <POINTER(IUnknown) ptr=0x1d2dcdf8070 at 1d2dbdbccd0>
+2025-09-24 02:20:02,702 DEBUG GetModule(TLIBATTR(GUID={C866CA3A-32F7-11D2-9602-00C04F8EE628}, Version=5.4, LCID=0, FLags=0x8))
+2025-09-24 02:20:02,702 DEBUG Implements default interface from typeinfo <class 'comtypes.gen._C866CA3A_32F7_11D2_9602_00C04F8EE628_0_5_4.ISpeechObjectToken'>
+2025-09-24 02:20:02,702 DEBUG Final result is <POINTER(ISpeechObjectToken) ptr=0x1d2dcdf8070 at 1d2dbdbcd50>
+2025-09-24 02:20:02,702 DEBUG Release <POINTER(IDispatch) ptr=0x1d2dcdf8070 at 1d2dbdbcbd0>
+2025-09-24 02:20:02,702 DEBUG Release <POINTER(ITypeInfo) ptr=0x1d2d9978d20 at 1d2dbdbcc50>
+2025-09-24 02:20:02,702 DEBUG Release <POINTER(ITypeLib) ptr=0x1d2d9b0bc80 at 1d2dbdbccd0>
+2025-09-24 02:20:02,702 DEBUG Release <POINTER(IDispatch) ptr=0x1d2dcdf8070 at 1d2dbabc2d0>
+2025-09-24 02:20:02,702 DEBUG Release <POINTER(IEnumVARIANT) ptr=0x1d2d93aae60 at 1d2dbabc650>
+2025-09-24 02:20:02,702 DEBUG Release <POINTER(ISpeechObjectTokens) ptr=0x1d2dcdf7f60 at 1d2dbabc9d0>
+2025-09-24 02:20:02,703 DEBUG Release <POINTER(ISpeechObjectToken) ptr=0x1d2dcdf8070 at 1d2dbdbcd50>
+2025-09-24 02:20:02,703 INFO pyttsx3 engine initialized in main thread
+2025-09-24 02:20:02,704 INFO pythoncom.CoInitialize called in worker
+2025-09-24 02:20:02,704 INFO Speech worker starting
+2025-09-24 02:20:02,704 INFO Speech thread started
+2025-09-24 02:20:02,705 INFO Queuing text for speak: 'First test message'
+2025-09-24 02:20:02,705 INFO Worker got text: 'First test message' (queue size before speaking: 0)
+2025-09-24 02:20:02,706 DEBUG wrap_outparam(<POINTER(ISpeechObjectToken) ptr=0x1d2d93a8490 at 1d2d9647450>)
+2025-09-24 02:20:02,706 DEBUG Release <POINTER(ISpeechObjectToken) ptr=0x1d2d93a8490 at 1d2d9647450>
+2025-09-24 02:20:03,206 INFO Queuing text for speak: 'Second test message'
+2025-09-24 02:20:03,707 INFO Queuing text for speak: 'Third test message'
+2025-09-24 02:20:23,709 DEBUG Calling CoUninitialize()
+2025-09-24 02:20:23,709 DEBUG CoUninitialize() done.
+2025-09-24 02:20:23,709 INFO Stopping speech system
+2025-09-24 02:25:05,671 DEBUG CoInitializeEx(None, 2)
+2025-09-24 02:25:05,739 INFO Imported existing <module 'comtypes.gen' from 'D:\\jarvis\\jarvis_env\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2025-09-24 02:25:05,739 INFO Using writeable comtypes cache directory: 'D:\jarvis\jarvis_env\Lib\site-packages\comtypes\gen'
+2025-09-24 02:25:05,809 DEBUG SAPI.SPVoice -> {96749377-3391-11D2-9EE3-00C04F797396}
+2025-09-24 02:25:05,809 DEBUG CoCreateInstance({96749377-3391-11D2-9EE3-00C04F797396}, clsctx=None, interface=None)
+2025-09-24 02:25:05,819 DEBUG GetBestInterface(<POINTER(IUnknown) ptr=0x256d1722d00 at 256d1b0b950>)
+2025-09-24 02:25:05,819 DEBUG Does implement IProvideClassInfo
+2025-09-24 02:25:05,820 DEBUG Default interface is {269316D8-57BD-11D2-9EEE-00C04F797396}
+2025-09-24 02:25:05,821 DEBUG Release <POINTER(IUnknown) ptr=0x256d1722d40 at 256d3fd37d0>
+2025-09-24 02:25:05,821 DEBUG GetModule(TLIBATTR(GUID={C866CA3A-32F7-11D2-9602-00C04F8EE628}, Version=5.4, LCID=0, FLags=0x8))
+2025-09-24 02:25:05,821 DEBUG Implements default interface from typeinfo <class 'comtypes.gen._C866CA3A_32F7_11D2_9602_00C04F8EE628_0_5_4.ISpeechVoice'>
+2025-09-24 02:25:05,821 DEBUG Final result is <POINTER(ISpeechVoice) ptr=0x256d1722d40 at 256d3fd3750>
+2025-09-24 02:25:05,821 DEBUG Release <POINTER(IProvideClassInfo) ptr=0x256d1722d60 at 256d3fd34d0>
+2025-09-24 02:25:05,821 DEBUG Release <POINTER(ITypeInfo) ptr=0x256d1bbec88 at 256d3fd3350>
+2025-09-24 02:25:05,821 DEBUG Release <POINTER(ITypeInfo) ptr=0x256d1bbece0 at 256d3fd35d0>
+2025-09-24 02:25:05,821 DEBUG Release <POINTER(ITypeLib) ptr=0x256d1d816a0 at 256d3fd37d0>
+2025-09-24 02:25:05,821 DEBUG Release <POINTER(IUnknown) ptr=0x256d1722d00 at 256d1b0b950>
+2025-09-24 02:25:05,822 DEBUG <POINTER(ISpeechVoice) ptr=0x256d1722d40 at 256d3fd3750> using sinkinterface from clsid <class 'comtypes.gen._C866CA3A_32F7_11D2_9602_00C04F8EE628_0_5_4._ISpeechVoiceEvents'>
+2025-09-24 02:25:05,822 DEBUG Release <POINTER(IProvideClassInfo2) ptr=0x256d1722d60 at 256d1b0b950>
+2025-09-24 02:25:05,822 DEBUG <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x00000256D379F8C0>: _ISpeechVoiceEvents.VoiceChange not implemented
+2025-09-24 02:25:05,823 DEBUG <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x00000256D379F8C0>: _ISpeechVoiceEvents.Bookmark not implemented
+2025-09-24 02:25:05,823 DEBUG <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x00000256D379F8C0>: _ISpeechVoiceEvents.Sentence not implemented
+2025-09-24 02:25:05,823 DEBUG <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x00000256D379F8C0>: _ISpeechVoiceEvents.Phoneme not implemented
+2025-09-24 02:25:05,823 DEBUG <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x00000256D379F8C0>: _ISpeechVoiceEvents.Viseme not implemented
+2025-09-24 02:25:05,823 DEBUG <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x00000256D379F8C0>: _ISpeechVoiceEvents.AudioLevel not implemented
+2025-09-24 02:25:05,823 DEBUG <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x00000256D379F8C0>: _ISpeechVoiceEvents.EnginePrivate not implemented
+2025-09-24 02:25:05,823 DEBUG Start advise <class 'comtypes.gen._C866CA3A_32F7_11D2_9602_00C04F8EE628_0_5_4._ISpeechVoiceEvents'>
+2025-09-24 02:25:05,823 DEBUG <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x00000256D379F8C0>.QueryInterface({A372ACD1-3BEF-4BBD-8FFB-CB3E2B416AF8}) -> S_OK
+2025-09-24 02:25:05,823 DEBUG 1 active COM objects: Added   <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x00000256D379F8C0>
+2025-09-24 02:25:05,823 DEBUG <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x00000256D379F8C0>.AddRef() -> 1
+2025-09-24 02:25:05,827 DEBUG Release <POINTER(IConnectionPointContainer) ptr=0x256d1722d68 at 256d3d389d0>
+2025-09-24 02:25:05,882 DEBUG wrap_outparam(<POINTER(ISpeechObjectToken) ptr=0x256d1728770 at 256d3d389d0>)
+2025-09-24 02:25:05,883 DEBUG Release <POINTER(ISpeechObjectToken) ptr=0x256d1728770 at 256d3d389d0>
+2025-09-24 02:25:05,883 DEBUG wrap_outparam(<POINTER(ISpeechObjectTokens) ptr=0x256d4678170 at 256d3d389d0>)
+2025-09-24 02:25:05,884 DEBUG Release <POINTER(IUnknown) ptr=0x256d172acc0 at 256d3d38550>
+2025-09-24 02:25:05,884 DEBUG wrap_outparam(<POINTER(IDispatch) ptr=0x256d4678280 at 256d3d382d0>)
+2025-09-24 02:25:05,884 DEBUG GetBestInterface(<POINTER(IDispatch) ptr=0x256d4678280 at 256d3d382d0>)
+2025-09-24 02:25:05,884 DEBUG Does NOT implement IProvideClassInfo, trying IProvideClassInfo2
+2025-09-24 02:25:05,885 DEBUG Does NOT implement IProvideClassInfo/IProvideClassInfo2
+2025-09-24 02:25:05,886 DEBUG Release <POINTER(IUnknown) ptr=0x256d1bbed90 at 256d4044d50>
+2025-09-24 02:25:05,886 DEBUG Default interface is {C74A3ADC-B727-4500-A84A-B526721C8B8C}
+2025-09-24 02:25:05,886 DEBUG Release <POINTER(IUnknown) ptr=0x256d4678280 at 256d4044cd0>
+2025-09-24 02:25:05,886 DEBUG GetModule(TLIBATTR(GUID={C866CA3A-32F7-11D2-9602-00C04F8EE628}, Version=5.4, LCID=0, FLags=0x8))
+2025-09-24 02:25:05,886 DEBUG Implements default interface from typeinfo <class 'comtypes.gen._C866CA3A_32F7_11D2_9602_00C04F8EE628_0_5_4.ISpeechObjectToken'>
+2025-09-24 02:25:05,888 DEBUG Final result is <POINTER(ISpeechObjectToken) ptr=0x256d4678280 at 256d4044d50>
+2025-09-24 02:25:05,889 DEBUG Release <POINTER(IDispatch) ptr=0x256d4678280 at 256d4044bd0>
+2025-09-24 02:25:05,889 DEBUG Release <POINTER(ITypeInfo) ptr=0x256d1bbed90 at 256d4044c50>
+2025-09-24 02:25:05,889 DEBUG Release <POINTER(ITypeLib) ptr=0x256d1d816a0 at 256d4044cd0>
+2025-09-24 02:25:05,889 DEBUG Release <POINTER(IDispatch) ptr=0x256d4678280 at 256d3d382d0>
+2025-09-24 02:25:05,889 DEBUG Release <POINTER(IEnumVARIANT) ptr=0x256d172acc0 at 256d3d38650>
+2025-09-24 02:25:05,889 DEBUG Release <POINTER(ISpeechObjectTokens) ptr=0x256d4678170 at 256d3d389d0>
+2025-09-24 02:25:05,889 DEBUG Release <POINTER(ISpeechObjectToken) ptr=0x256d4678280 at 256d4044d50>
+2025-09-24 02:25:05,889 INFO pyttsx3 engine initialized in main thread
+2025-09-24 02:25:05,890 INFO Speech thread started
+2025-09-24 02:25:05,891 INFO Queuing text for speak: 'First test message'
+2025-09-24 02:25:05,892 DEBUG wrap_outparam(<POINTER(ISpeechObjectToken) ptr=0x256d1728770 at 256d18c7450>)
+2025-09-24 02:25:05,892 DEBUG Release <POINTER(ISpeechObjectToken) ptr=0x256d1728770 at 256d18c7450>
+2025-09-24 02:25:05,893 DEBUG wrap_outparam(<POINTER(ISpeechObjectToken) ptr=0x256d1728770 at 256d18c7450>)
+2025-09-24 02:25:05,893 DEBUG Release <POINTER(ISpeechObjectToken) ptr=0x256d1728770 at 256d18c7450>
+2025-09-24 02:25:06,393 INFO Queuing text for speak: 'Second test message'
+2025-09-24 02:25:06,894 INFO Queuing text for speak: 'Third test message'
+2025-09-24 02:25:26,896 DEBUG Calling CoUninitialize()
+2025-09-24 02:25:26,896 DEBUG CoUninitialize() done.
+2025-09-24 02:25:26,896 INFO Stopping speech system
