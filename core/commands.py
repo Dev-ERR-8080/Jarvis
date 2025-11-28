@@ -272,6 +272,7 @@ def handle_command(command: str ):
             
         if action and time:
             # This is where you call your actual scheduler function: set_reminder_cmd(action, time)
+            
             return f"Reminder set for: '{action}' in {time}"
         elif action:
             return f"Reminder set for: '{action}' - please specify the time."
@@ -283,7 +284,7 @@ def handle_command(command: str ):
     
     # Placement drive automation
     if any(kw in command for kw in [
-        "placement drive", "placement portal", "update notion", "check jobs", "summarize drives"
+        "placement drive", "placement portal", "update placements notion", "check jobs", "summarize drives"
     ]):
         try:
             base_path = os.path.dirname(__file__)
@@ -309,8 +310,13 @@ def handle_command(command: str ):
     
     # Check for events from emails
     if "check for events" in c or "process my unread emails" in c:
-        return process_and_add_events_cmd()
-    
+        return run_background_task(
+            process_and_add_events_cmd,
+            title="Email Event Extraction",
+            message="Processing unread emails to extract events..."
+        )
+        # return process_and_add_events_cmd()
+        
     # Quit
     if c in ("exit", "quit", "bye"):
         return "Goodbye!"

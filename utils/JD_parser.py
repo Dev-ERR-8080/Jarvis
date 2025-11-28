@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 NOTION_TOKEN = os.getenv("NOTION_API_KEY")  
-PARENT_PAGE_ID = "286cae280df980e2b3bcea2ef9309bea" 
+PARENT_PAGE_ID = os.getenv("NOTION_PARENT_PAGE_ID")
 
 try:
     notion = NotionInteraction(token=NOTION_TOKEN, parent_page_id=PARENT_PAGE_ID)
@@ -125,59 +125,6 @@ def summerize(jd_data: dict):
         
     except Exception as e:
         print(f"❌ An error occurred while adding to Notion: {e}")
-
-def parse_jd_from_html(html_content: str):
-    soup = BeautifulSoup(html_content, "lxml")
-    data = {}
-    
-    # ... (your parsing logic from parse_jd_from_file goes here) ...
-    for tr in soup.find_all("tr"):
-        tds = tr.find_all("td")
-        if len(tds) >= 2 and 'colspan' not in tds[0].attrs:
-            label = tds[0].get_text(strip=True)
-            value = tds[1].get_text(" ", strip=True)
-            label_lower = label.lower()
-            if "name of company" in label_lower:
-                data["company_name"] = value
-            elif "name & type of event" in label_lower:
-                data["event_type"] = value
-            elif "year (passing out)" in label_lower:
-                data["passing_out_year"] = value
-            elif "venue" in label_lower:
-                data["venue"] = value
-            elif "drive date" in label_lower:
-                data["drive_date"] = value
-            elif "last date of registration" in label_lower:
-                data["last_date_of_registration"] = value
-            elif "eligible gender" in label_lower:
-                data["eligible_gender"] = value
-            elif "bond details" in label_lower:
-                data["bond_details"] = value
-            elif "skills required" in label_lower:
-                data["skills_required"] = value
-            elif "about company" in label_lower:
-                data["about_company"] = value
-            elif "website" in label_lower:
-                link = tds[1].find('a')
-                if link:
-                    data["company_website"] = link['href']
-            elif "job profile" in label_lower:
-                data["job_profile"] = value
-            elif "pre-requirements" in label_lower:
-                data["pre_requirements"] = value
-            elif "tentative date of joining" in label_lower:
-                data["tentative_date_of_joining"] = value
-
-    job_details_table = soup.find("table", {"id": "tblStreamData"})
-    if job_details_table:
-        data_row = job_details_table.find_all("tr")[1]
-        details_tds = data_row.find_all("td")
-        if len(details_tds) >= 5:
-            data["designation"] = details_tds[1].get_text(strip=True)
-            data["eligibility_details"] = details_tds[2].get_text(strip=True)
-            data["salary_package"] = details_tds[3].get_text(strip=True)
-            data["job_location"] = details_tds[4].get_text(strip=True)
-    return data
 
 
 if __name__ == "__main__":

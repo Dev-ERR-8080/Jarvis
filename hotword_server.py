@@ -108,7 +108,6 @@
 # if __name__ == "__main__":
 #     asyncio.run(main())
 
-
 import asyncio, threading, json, struct, sys, time, tempfile, os, wave
 import websockets, pvporcupine, pyaudio, audioop
 from collections import deque
@@ -125,7 +124,7 @@ DEBOUNCE_SECONDS = 2
 SILENCE_THRESHOLD = 200     # amplitude level for silence detection
 SILENCE_DURATION = 1.2      # seconds of silence to stop recording
 
-# --- WebSocket Notifications ---
+# --- WebSocket Notifications (omitted for brevity) ---
 async def broadcast_state(state: str):
     if not CLIENTS: return
     msg = json.dumps({"event": state})
@@ -147,7 +146,7 @@ async def websocket_handler(ws):
     finally:
         CLIENTS.discard(ws)
 
-# --- Helper ---
+# --- Helper (omitted for brevity) ---
 def save_wav(filename, pcm, rate=16000):
     with wave.open(filename, "wb") as wf:
         wf.setnchannels(1)
@@ -158,16 +157,24 @@ def save_wav(filename, pcm, rate=16000):
 def is_silence(pcm):
     return audioop.rms(struct.pack("<" + "h"*len(pcm), *pcm), 2) < SILENCE_THRESHOLD
 
-# --- Assistant Handling ---
+# --- Assistant Handling (WITH TIMING) ---
 async def run_assistant_process(prebuffer_snapshot):
     global ASSISTANT_ACTIVE
     ASSISTANT_ACTIVE = True
+    
+    # 📌 PHASE 0: Start of the entire process lifecycle
+    total_start_time = time.time()
+    
     await broadcast_state("processing")
 
-    # write temp audio file
+    # 📌 PHASE 1: Audio file saving
+    wav_save_start = time.time()
     tmp_path = os.path.join(tempfile.gettempdir(), f"prebuffer_{int(time.time())}.wav")
     save_wav(tmp_path, prebuffer_snapshot)
-
+    wav_save_end = time.time()
+    
+    # 📌 PHASE 2: Launching and communicating with the subprocess
+    
     def play_prompt():
         say("Hmm")
 
@@ -177,26 +184,58 @@ async def run_assistant_process(prebuffer_snapshot):
         sys.executable, "jarvis_assistant.py", "--prebuffer", tmp_path,
         stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
     )
+    
+    # Subprocess start time is right after the launch call
+    sub_start_time = time.time()
+    
     stdout, stderr = await proc.communicate()
+    
+    # 📌 PHASE 3: Process completion
+    end_time = time.time()
+    
+    # --- CALCULATE TIMES ---
+    process_duration = end_time - sub_start_time      # Time the subprocess ran
+    total_latency = end_time - total_start_time       # Total time from trigger to finish
+    wav_save_duration = wav_save_end - wav_save_start # Time spent saving the file
+
+    # --- REPORT TIMING ---
+    print(f"[TIMING] Phase 1 (WAV Save): {wav_save_duration:.3f}s")
+    
     if proc.returncode != 0:
-        print("[Assistant Error]", stderr.decode())
+        print(f"[Assistant Error] Subprocess ran for {process_duration:.3f}s. Error: {stderr.decode()}")
     else:
-        print("[Assistant Output]", stdout.decode())
+        print(f"[Assistant Output] Subprocess ran for {process_duration:.3f}s.")
+        print(f"[TIMING] 🏁 TOTAL SERVER LATENCY (Hotword -> Finish): {total_latency:.3f}s")
+        print(stdout.decode())
 
     # os.remove(tmp_path)
     ASSISTANT_ACTIVE = False
     await broadcast_state("idle")
 
-# --- Hotword + Recording Loop ---
+# --- Hotword + Recording Loop (omitted for brevity) ---
 async def hotword_loop():
-    print("🎧 Initializing Porcupine wakeword engine…")
-    porcupine = pvporcupine.create(
-        access_key=PICOVOICE_ACCESS_KEY,
-        keywords=["jarvis"],
-        sensitivities=[0.6]
-    )
+    # ... (Your existing hotword_loop logic remains here) ...
+    # This loop is responsible for:
+    # 1. Hotword detection (Porcupine.process)
+    # 2. Recording the command (while loop collecting pcm)
+    # 3. Kicking off run_assistant_process
 
+    # ... (Your existing hotword_loop logic) ...
+    print("🎧 Initializing Porcupine wakeword engine…")
+    # ... (omitted) ...
+    porcupine = pvporcupine.create(
+
+        access_key=PICOVOICE_ACCESS_KEY,
+
+        keywords=["jarvis"],
+
+        sensitivities=[0.6]
+
+    )
+    
     pa = pyaudio.PyAudio()
+    # ... (omitted) ...
+    
     stream = pa.open(
         rate=porcupine.sample_rate,
         channels=1,
@@ -240,21 +279,22 @@ async def hotword_loop():
             await asyncio.sleep(0.01)
 
     except KeyboardInterrupt:
-        print("🛑 Exiting hotword listener...")
+        print(" Exiting hotword listener...")
     finally:
-        print("🔧 Cleaning up resources...")
+        print(" Cleaning up resources...")
         stream.stop_stream()
         stream.close()
         pa.terminate()
         porcupine.delete()
 
-# --- WebSocket Server ---
+
+# --- WebSocket Server (omitted for brevity) ---
 async def start_websocket_server():
     async with websockets.serve(websocket_handler, "0.0.0.0", PORT):
-        print(f"🌐 WebSocket server ready on ws://localhost:{PORT}")
+        print(f" WebSocket server ready on ws://localhost:{PORT}")
         await asyncio.Future()  # run forever
 
-# --- Main ---
+# --- Main (omitted for brevity) ---
 async def main():
     await asyncio.gather(start_websocket_server(), hotword_loop())
 
