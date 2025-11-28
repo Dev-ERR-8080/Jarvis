@@ -25,6 +25,7 @@ __pycache__/
 .jarvis
 .token
 .reminders
+.credentials
 
 # Temporary files from audio processing
 .prebuffer
