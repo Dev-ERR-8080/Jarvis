@@ -2,13 +2,8 @@
 # A. Dependency and Environment Files
 # ------------------------------------
 
-# Python virtual environment directory
 jarvis_env/
-
-# Node modules (since you have a node_modules entry)
 node_modules/
-
-# Python compiled files
 __pycache__/
 *.pyc
 *.pyd
@@ -18,14 +13,16 @@ __pycache__/
 # B. Runtime and Configuration Files
 # ------------------------------------
 
-# Environment variables file (contains secrets)
 .env
-
-# Assistant configuration/runtime files (private data)
 .jarvis
 .token
 .reminders
-.credentials
 
 # Temporary files from audio processing
 .prebuffer
+
+# Actual sensitive files (json + logs)
+credentials.json
+token.json
+reminders.json
+jarvis.log
